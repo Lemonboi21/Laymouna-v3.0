@@ -1,0 +1,3 @@
+CLIENT SECRET = 0A9wEKHex8bl6Lt0y4H9vIBfGxXl2DOR
+CLIENT KEY = 1172537090181959761
+URL = https://discord.com/api/oauth2/authorize?client_id=1172537090181959761&permissions=8&scope=bot
