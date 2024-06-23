@@ -1,6 +1,6 @@
 
 #-------------------------- discord bot --------------------------
-token = "MTE3MjUzNzA5MDE4MTk1OTc2MQ.Ggm5_9.EYnUzGTL6BMl0MDfSN3uDl5Or0u-oH4Wi_y6G8"
+token = "#"
 
 #-------------------------- firebase --------------------------
 DB_config = {
