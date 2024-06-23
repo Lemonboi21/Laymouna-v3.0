@@ -33,4 +33,4 @@ nasa_api_key = "vwELc2RWspOUwfhglk8FhYTRFBgBDTqOcQc3vd65"
 
 #-------------------------- google gemini api --------------------------
 #google_api_key = "AIzaSyB-7oqXZqV2qJQcI4Q6Yx2Q1K4VgR3qQ4c"
-google_api_key = "AIzaSyCly__XnvHtaEpKST3N9kl-WeQuuRwYENU"
+google_api_key = "AIzaSyAg0weECMpm4e5x4Lj3R_4LbUwiHDKVcAc"

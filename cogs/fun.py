@@ -7,6 +7,7 @@ import asyncio
 import requests
 from bot_tools import *
 from config import nasa_api_key
+from gemini import generate_response
 
 party = []
 last_chosen = []
@@ -113,20 +114,6 @@ class fun(commands.Cog):
     async def on_ready(self):
         print("fun.py is ready !")
 
-    """    @commands.command(aliases = ["8b" , "hmmm" ])
-        async def ask(self ,ctx, *, question):
-            with open("files/wisdom.txt","r") as f:
-                random_responses = f.readlines()
-                response = random.choice(random_responses)
-            if question.__contains__("sara") :
-                response = "lemme guess .. it's farouk right ? yes sara loves u and yes y'all will get married .. akhtini !"
-            
-            await ctx.send(response)
-        @ask.error
-        async def hikma_error(self , ctx , error):
-            if isinstance(error , commands.MissingRequiredArgument):
-                await ctx.send("u need to ask a question ! i don't read minds ..")"""
-
 
 
     
@@ -162,6 +149,13 @@ class fun(commands.Cog):
 
             tod_button = choose()
             await ctx.send("choose one :", view = tod_button)
+
+
+    @commands.command(aliases = ["8b" , "hmmm" ])
+    async def ask(self ,ctx, *, question):
+        response = generate_response(question)
+        await ctx.send(response)
+
 
     @commands.command(aliases = [])
     async def bored(self ,ctx,):
@@ -276,6 +270,7 @@ class fun(commands.Cog):
         else:
         
             await ctx.send("invalid input ! it should be a morse or binary or hex code")
+
 
     @commands.command(aliases = [])
     async def yoda(self ,ctx, *, text):
@@ -758,7 +753,6 @@ class fun(commands.Cog):
 
 
     #a command that talks like the person who used it
-
     @commands.command(aliases = ["talk"])
     async def memic(self ,ctx, *, question):
         await ctx.send(question)
