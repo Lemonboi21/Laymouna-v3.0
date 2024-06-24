@@ -24,7 +24,7 @@ def get_server_prefix(laymouna,message):
 #---------------------bot---------------------
 
 
-laymouna = commands.Bot(command_prefix = "l " , intents = discord.Intents.all())
+laymouna = commands.Bot(command_prefix = get_server_prefix , intents = discord.Intents.all())
 
 laymouna.remove_command("help")
 
