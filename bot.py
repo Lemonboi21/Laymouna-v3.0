@@ -4,7 +4,6 @@ from itertools import cycle
 from config import *
 import os
 import asyncio
-import json
 from bot_tools import *
 #---------------------firebase---------------------
 import firebase_admin
@@ -30,18 +29,7 @@ laymouna.remove_command("help")
 
 #---------------------commands---------------------
 
-@laymouna.command()
-async def testdb(ctx , miw):
-    try:
-        data = miw
-        await ctx.send(f"miw = {data}")
-        user = ctx.author
-        ref = db.reference(f"/")
-        await ctx.send(f"user = {user}")
-        ref.update({f"{user.id}" : { "miw" : str(data) }})
-        await ctx.send("done")
-    except Exception as e:
-        await ctx.send(f"error : {e}")
+
 
 #---------------------statut---------------------
 
@@ -52,7 +40,6 @@ async def change_status():
     await laymouna.change_presence(activity=discord.Game(next(bot_status)))
 
 #------------------------------------------------
-
 @laymouna.event 
 
 async def on_ready () :
@@ -66,6 +53,8 @@ async def on_ready () :
 async def hello (interaction : discord.Interaction):
 
     await interaction.response.send_message("hello world !")
+
+
 
 
 #---------------------loading cogs---------------------
@@ -104,7 +93,7 @@ async def on_guild_join(guild):
     # test if the server id is 1035648259156344882
     # if yes send a message in the general channel
         
-    if guild.id == 1035648259156344882 or guild.id == 1121070453939781812:
+    if guild.id == 0 or guild.id == 1:
 
         channel = guild.system_channel
 
@@ -133,14 +122,12 @@ async def on_guild_join(guild):
        
 
     else:
-        
         channel = guild.system_channel
-        print("channel id :" + str(channel.id))
-        await channel.send("hello ! i'm the laymouna bot , i'm here  have fun with you ! use the /help command to see all my commands !")
-        print("message sent !")
+        await channel.send("hello ! i'm the laymouna bot , i'm here to have fun with you ! use the /help command to see all my commands !")
+        
 
 
-"""delete server from database when the bot leaves it"""
+# delete server from database when the bot leaves it
 """
 @laymouna.event
 async def on_guild_remove(guild):

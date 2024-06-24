@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import json
+
 import random
 from bot_tools import *
 
@@ -16,10 +16,12 @@ class economy(commands.Cog):
     @commands.Cog.listener()
     async def on_ready(self):
         print("economy.py is ready !")
+        
 
 
     @commands.command(aliases=["money" , "balance" , "cash" , "lemons" , "l"])
     async def lemon(self , ctx , member:discord.Member=None):
+
 
         if member == None:
             member=ctx.author

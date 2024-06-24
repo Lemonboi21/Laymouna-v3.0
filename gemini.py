@@ -35,9 +35,4 @@ def answer(prompt):
     print(response.text)
     return response.text
 
-prompt = "hello how are you ?"
-
-response = generate_response(prompt)
-
-#print(response)
 

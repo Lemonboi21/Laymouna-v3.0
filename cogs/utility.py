@@ -3,10 +3,7 @@ import datetime
 from gemini import answer
 import discord
 from discord.ext import commands
-from discord.utils import get
-import json
 from bot_tools import *
-from config import API_token
 
 
 
@@ -240,10 +237,9 @@ class utility(commands.Cog):
     @commands.command(aliases=[])
     async def ai (self,ctx,*,prompt:str):
         
-        bard = Bard(token = API_token)
-        response = bard.get_answer(prompt)
+        response = answer(prompt)
 
-        await ctx.send(response['content'])
+        await ctx.send(response)
 
 
 async def setup(laymouna):

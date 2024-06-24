@@ -4,7 +4,6 @@ from discord.ext import commands
 import random
 from aiohttp import request
 import asyncio
-import requests
 from bot_tools import *
 from config import nasa_api_key
 from gemini import generate_response
