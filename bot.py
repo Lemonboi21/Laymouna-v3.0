@@ -18,20 +18,24 @@ databaseApp = firebase_admin.initialize_app(cred , {'databaseURL' : DB_url})
 def get_server_prefix(laymouna,message):
     
     ref = db.reference(f"/servers/{message.guild.id}/prefix")
+
     return ref.get()
 
 #---------------------bot---------------------
 
 
-laymouna = commands.Bot(command_prefix = get_server_prefix , intents = discord.Intents.all())
+laymouna = commands.Bot(command_prefix = "l " , intents = discord.Intents.all())
 
 laymouna.remove_command("help")
 
 #---------------------commands---------------------
 
+@laymouna.command(name="mmm" , description="mmmm mmmm mm")
+async def mmm(ctx):
+    await ctx.send("this command rahi tmchi")
 
 
-#---------------------statut---------------------
+#---------------------statut----------------------
 
 bot_status = cycle(["tnavigui zamanha" ,"deeping sleep" ,"tsm3 didin" ,"triski .. chkoun 3taha ?","tsm3 f tan tan ti"])
 
